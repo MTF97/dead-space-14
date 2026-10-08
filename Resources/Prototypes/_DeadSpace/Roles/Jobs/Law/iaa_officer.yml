@@ -46,6 +46,7 @@
   storage:
     back:
     - IAAOfficerLoadoutSecondary
+    - ClothingMaskGasSecurity
 
 - type: chameleonOutfit
   id: IAAOfficerChameleonOutfit
