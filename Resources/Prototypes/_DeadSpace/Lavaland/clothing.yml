@@ -196,9 +196,9 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.5
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.6
         Heat: 0.5
         Cold: 0.5
         Radiation: 0.3
@@ -549,4 +549,4 @@
   - type: InstantAction
     event: !type:DrakeArmorTransformActionEvent
       drakeChance: 0.5
-      skeletonStunDuration: 10
+      skeletonStunDuration: 0

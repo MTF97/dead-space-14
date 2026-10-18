@@ -341,7 +341,7 @@
         conditions:
           # they gotta be in crit first
         - !type:MobStateCondition
-          mobstate: 
+          mobstate:
           #DS14-start
           - Critical
           - PreCritical
@@ -862,8 +862,8 @@
       effects:
       - !type:EvenHealthChange
         damage:
-          Brute: -1
-          Burn: -1
+          Brute: -0.5 # DS14-value
+          Burn: -0.5 # DS14-value
           Toxin: -0.5
 
 - type: reagent

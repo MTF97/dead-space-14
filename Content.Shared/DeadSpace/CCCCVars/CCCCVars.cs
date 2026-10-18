@@ -225,6 +225,9 @@ public sealed class CCCCVars
     public static readonly CVarDef<bool> PopOutChat =
     CVarDef.Create("Chat.PopOut", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    public static readonly CVarDef<string> PopOutChatFailedBuild =
+        CVarDef.Create("Chat.PopOutFailedBuild", "", CVar.CLIENTONLY | CVar.ARCHIVE);
+
     public static readonly CVarDef<bool> PsychiatryEnabled =
         CVarDef.Create("deadspace.psychiatry_enabled", true, CVar.SERVER | CVar.REPLICATED);
 
@@ -347,18 +350,9 @@ public sealed class CCCCVars
     public static readonly CVarDef<float> PsychiatryCoursePillUnits =
         CVarDef.Create("deadspace.psychiatry_course_pill_units", 15f, CVar.SERVER | CVar.REPLICATED);
 
-    // Шанс сбоя у шока. У лоботомии около 0.30, шок должен быть безопаснее.
+    // Шанс слепоты, глухоты или немоты у шока и зонда.
     public static readonly CVarDef<float> PsychiatryShockFaultChance =
-        CVarDef.Create("deadspace.psychiatry_shock_fault_chance", 0.18f, CVar.SERVER | CVar.REPLICATED);
-
-    public static readonly CVarDef<float> PsychiatryLobotomyFaultChance =
-        CVarDef.Create("deadspace.psychiatry_lobotomy_fault_chance", 0.30f, CVar.SERVER | CVar.REPLICATED);
-
-    public static readonly CVarDef<float> PsychiatryIonFaultChance =
-        CVarDef.Create("deadspace.psychiatry_ion_fault_chance", 0.40f, CVar.SERVER | CVar.REPLICATED);
-
-    public static readonly CVarDef<float> PsychiatryHardResetFaultChance =
-        CVarDef.Create("deadspace.psychiatry_hard_reset_fault_chance", 0.30f, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("deadspace.psychiatry_shock_fault_chance", 0.25f, CVar.SERVER | CVar.REPLICATED);
 
     // Сколько луж максимум зацепит один удар, чтобы не залить всю палубу.
     public static readonly CVarDef<int> PsychiatryPuddleChainCap =
@@ -404,7 +398,10 @@ public sealed class CCCCVars
         CVarDef.Create("deadspace.psychiatry_remap_mob_simple", 0.65f, CVar.SERVER | CVar.REPLICATED);
 
     public static readonly CVarDef<float> PsychiatryRemapMobAcute =
-        CVarDef.Create("deadspace.psychiatry_remap_mob_acute", 0.9f, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("deadspace.psychiatry_remap_mob_acute", 0.6f, CVar.SERVER | CVar.REPLICATED);
+
+    public static readonly CVarDef<float> PsychiatryRemapMobHumanoid =
+        CVarDef.Create("deadspace.psychiatry_remap_mob_humanoid", 0.3f, CVar.SERVER | CVar.REPLICATED);
 
     public static readonly CVarDef<float> PsychiatryRemapItemLatent =
         CVarDef.Create("deadspace.psychiatry_remap_item_latent", 0.35f, CVar.SERVER | CVar.REPLICATED);
@@ -413,13 +410,21 @@ public sealed class CCCCVars
         CVarDef.Create("deadspace.psychiatry_remap_item_simple", 0.45f, CVar.SERVER | CVar.REPLICATED);
 
     public static readonly CVarDef<float> PsychiatryRemapItemAcute =
-        CVarDef.Create("deadspace.psychiatry_remap_item_acute", 0.55f, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("deadspace.psychiatry_remap_item_acute", 0.2f, CVar.SERVER | CVar.REPLICATED);
 
     // На острой стадии подмена чаще монстр, чем животное.
     public static readonly CVarDef<float> PsychiatryRemapMonsterChance =
         CVarDef.Create("deadspace.psychiatry_remap_monster_chance", 200f / 255f, CVar.SERVER | CVar.REPLICATED);
 
-    // На сколько клеток вокруг видны подмены и мясные стены.
+    public static readonly CVarDef<float> PsychiatryPhantomMinFraction =
+        CVarDef.Create("deadspace.psychiatry_phantom_min_fraction", 0.35f, CVar.SERVER);
+
+    public static readonly CVarDef<float> PsychiatryPhantomMaxFraction =
+        CVarDef.Create("deadspace.psychiatry_phantom_max_fraction", 0.65f, CVar.SERVER);
+
+    public static readonly CVarDef<float> PsychiatryPhantomMinRoom =
+        CVarDef.Create("deadspace.psychiatry_phantom_min_room", 8f, CVar.SERVER);
+
     public static readonly CVarDef<float> PsychiatryRemapRadius =
         CVarDef.Create("deadspace.psychiatry_remap_radius", 12f, CVar.SERVER | CVar.REPLICATED);
 }
